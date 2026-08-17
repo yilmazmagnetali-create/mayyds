@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAYYDS — E-Commerce Visual Studio | Profesyonel Ürün Görselleri</title>
+  <meta name="description" content="E-ticaret markaları için profesyonel ürün görseli düzenleme, dekupe, retouch ve infografik tasarım stüdyosu.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Manrope & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B1220',
+              blue: '#2563EB',
+              lightBlue: '#3B82F6',
+              bgLight: '#F8FAFC',
+              cardDark: '#111A2E'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Before / After Slider Custom Style */
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .slider-img-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, var(--pos, 50%) 0, var(--pos, 50%) 100%, 0 100%);
+    }
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos, 50%);
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-blue selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-brand-blue text-white font-heading font-extrabold text-2xl flex items-center justify-center rounded-xl shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
+          M
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-wider text-white">MAYYDS</span>
+          <span class="block text-[10px] tracking-widest uppercase text-slate-400 font-medium">Visual Studio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-white transition">Hizmetler</a>
+        <a href="#showcase" class="hover:text-white transition">Öncesi / Sonrası</a>
+        <a href="#process" class="hover:text-white transition">Nasıl Çalışıyoruz?</a>
+        <a href="#faq" class="hover:text-white transition">SSS</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="#quote" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-blue hover:bg-brand-lightBlue text-white font-medium text-sm transition-all shadow-md shadow-brand-blue/20 hover:shadow-brand-blue/40">
+        Teklif Al
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative pt-36 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <!-- Glow Effect -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/20 blur-[130px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-brand-lightBlue mb-8">
+        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+        E-COMMERCE VISUAL STUDIO
+      </div>
+
+      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none">
+        Ürününüzün <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-blue">En İyi</span> Görüntüsü.
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
+        Pazaryerleri ve e-ticaret mağazanız için ham fotoğrafları yüksek dönüşümlü, satış odaklı stüdyo görsellerine dönüştürüyoruz.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#quote" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-blue hover:bg-brand-lightBlue text-white font-semibold text-base transition-all shadow-lg shadow-brand-blue/30">
+          Hemen Teklif Alın
+        </a>
+        <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-base transition-all">
+          Çalışmaları İncele ↓
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
+          <span class="text-2xl">⚡</span>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase">Hızlı Teslimat</h4>
+            <p class="text-[11px] text-slate-400">24-48 Saat İçinde</p>
+          </div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
+          <span class="text-2xl">💎</span>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase">Yüksek Kalite</h4>
+            <p class="text-[11px] text-slate-400">Piksel Düzeyinde İşlem</p>
+          </div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
+          <span class="text-2xl">🎯</span>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase">Satış Odaklı</h4>
+            <p class="text-[11px] text-slate-400">Pazaryeri Uyumlu</p>
+          </div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
+          <span class="text-2xl">🛡️</span>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase">%100 Güven</h4>
+            <p class="text-[11px] text-slate-400">Sınırsız Revize Desteği</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BEFORE / AFTER SLIDER ================= -->
+  <section id="showcase" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Ham Fotoğraftan Satış Odaklı Görsele</h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">Kaydırıcıyı sağa-sola çekerek MAYYDS farkını test edin.</p>
+      </div>
+
+      <!-- Slider Component -->
+      <div class="slider-container relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl" id="slider">
+        <!-- Before (Base) -->
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="Before MAYYDS" class="w-full h-full object-cover">
+        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-black/70 backdrop-blur-md rounded-md text-xs font-bold text-slate-300 tracking-wider">HAM ÇEKİM (BEFORE)</span>
+
+        <!-- After (Overlay) -->
+        <div class="slider-img-after">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80" alt="After MAYYDS" class="w-full h-full object-cover">
+          <span class="absolute top-4 right-4 z-10 px-3 py-1 bg-brand-blue/90 backdrop-blur-md rounded-md text-xs font-bold text-white tracking-wider">MAYYDS RETOUCH (AFTER)</span>
+        </div>
+
+        <!-- Slider Bar & Handle -->
+        <div class="slider-handle w-1 bg-white cursor-ew-resize flex items-center justify-center pointer-events-none">
+          <div class="w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center shadow-lg border-2 border-white text-xs font-bold">
+            M
+          </div>
+        </div>
+
+        <input type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize" id="slider-range">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white">E-Ticaret İçin Uçtan Uca Görsel Hizmetler</h2>
+      <p class="mt-4 text-slate-400">Ürününüzün tüm platformlarda profesyonel ve güven verici durmasını sağlıyoruz.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Item 1 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">🖼️</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Ürün Görseli Düzenleme</h3>
+        <p class="mt-2 text-slate-400 text-sm">Işık, kontrast, renk kalibrasyonu ve gölge optimizasyonu ile kusursuz görünüm.</p>
+      </div>
+      <!-- Item 2 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">⬜</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Beyaz Arka Plan & Dekupe</h3>
+        <p class="mt-2 text-slate-400 text-sm">Pazaryeri kurallarına %100 uyumlu, pürüzsüz kenar kesimi ve saf beyaz zemin.</p>
+      </div>
+      <!-- Item 3 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">✨</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Profesyonel Retouch</h3>
+        <p class="mt-2 text-slate-400 text-sm">Toz, çizik ve yansımaları temizleme; malzeme dokusunu premium seviyeye çıkarma.</p>
+      </div>
+      <!-- Item 4 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">📦</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Pazaryeri Görselleri</h3>
+        <p class="mt-2 text-slate-400 text-sm">Trendyol, Amazon ve Hepsiburada için tıklanma oranını katlayan ilk kapak görselleri.</p>
+      </div>
+      <!-- Item 5 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">E-Ticaret İnfografik</h3>
+        <p class="mt-2 text-slate-400 text-sm">Ürün ölçüleri, teknik detaylar ve kullanım faydalarını anlatan görsel şemalar.</p>
+      </div>
+      <!-- Item 6 -->
+      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
+        <div class="text-3xl mb-4">🤖</div>
+        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">AI Konsept & Yaşam Alanı</h3>
+        <p class="mt-2 text-slate-400 text-sm">Stüdyo masrafı olmadan yapay zeka ile oluşturulan gerçekçi lifestyle sahneleri.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section id="process" class="py-20 bg-slate-900/30 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Nasıl Çalışıyoruz?</h2>
+        <p class="mt-3 text-slate-400">4 basit adımda ürünlerinizi satışa hazır hale getirin.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
+          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">01</span>
+          <h4 class="font-bold text-white text-lg">Görselleri İletin</h4>
+          <p class="text-slate-400 text-sm mt-2">Telefon veya makineyle çekilmiş ham fotoğrafları Drive ile paylaşın.</p>
+        </div>
+        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
+          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">02</span>
+          <h4 class="font-bold text-white text-lg">Analiz & Plan</h4>
+          <p class="text-slate-400 text-sm mt-2">Satış yapılacak platforma ve hedef kitleye göre görsel tarzını belirleyelim.</p>
+        </div>
+        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
+          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">03</span>
+          <h4 class="font-bold text-white text-lg">Stüdyo İşlemi</h4>
+          <p class="text-slate-400 text-sm mt-2">Dekupe, retouch ve infografik çalışmalarını titizlikle tamamlayalım.</p>
+        </div>
+        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
+          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">04</span>
+          <h4 class="font-bold text-white text-lg">Teslimat & Satış</h4>
+          <p class="text-slate-400 text-sm mt-2">Onayınız sonrası yüksek çözünürlüklü satışa hazır dosyaları teslim alın.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUOTE / CONTACT FORM ================= -->
+  <section id="quote" class="py-24 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+      <div class="text-center mb-10">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Projeniz İçin Hızlı Teklif Alın</h2>
+        <p class="text-slate-400 mt-2 text-sm">Formu doldurun, maksimum 2 saat içinde detaylı teklifinizi iletelim.</p>
+      </div>
+
+      <form id="quote-form" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Adınız Soyadınız</label>
+            <input type="text" id="name" required placeholder="Mehmet Ali Yılmaz" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Telefon / WhatsApp</label>
+            <input type="tel" id="phone" required placeholder="05XX XXX XX XX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Hizmet Türü</label>
+            <select id="service-type" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue">
+              <option>Beyaz Arka Plan & Dekupe</option>
+              <option>Pazaryeri Ürün Görselleri</option>
+              <option>Profesyonel Retouch</option>
+              <option>E-Ticaret İnfografik Tasarım</option>
+              <option>AI Destekli Konsept Çekim</option>
+              <option>Toplu Katalog İşleme</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Görsel / Ürün Sayısı</label>
+            <select id="volume" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue">
+              <option>1 - 10 Görsel (Hızlı Proje)</option>
+              <option>11 - 50 Görsel (Lansman / Koleksiyon)</option>
+              <option>50 - 200 Görsel (Katalog)</option>
+              <option>200+ Görsel / Aylık Düzenli İş</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Görsel / Drive Linki veya Proje Notu</label>
+          <textarea id="notes" rows="3" placeholder="Drive / WeTransfer linki veya ürününüz hakkında kısa bilgi..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-brand-lightBlue text-white font-bold text-base transition-all shadow-lg shadow-brand-blue/30 flex items-center justify-center gap-2">
+          <span>🚀 WhatsApp İle Hızlı Teklif Al</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="py-20 max-w-3xl mx-auto px-4 sm:px-6">
+    <h2 class="font-heading font-extrabold text-3xl text-white text-center mb-10">Sıkça Sorulan Sorular</h2>
+    <div class="space-y-4">
+      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+          Telefonla çekilen fotoğrafları kullanabilir miyiz?
+          <span class="transition group-open:rotate-180">▾</span>
+        </summary>
+        <p class="text-slate-400 text-sm mt-3">Evet! Yeterli ışıkta çekilmiş net telefon fotoğraflarını profesyonel retouch ve stüdyo dokunuşlarıyla pazaryerlerine uygun hale getiriyoruz.</p>
+      </details>
+      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+          Trendyol ve Amazon gereksinimlerine uygun mu?
+          <span class="transition group-open:rotate-180">▾</span>
+        </summary>
+        <p class="text-slate-400 text-sm mt-3">Kesinlikle. Tüm görseller saf beyaz zemin (%100 RGB 255), doğru piksel boyutları ve dosya sıkıştırma oranlarıyla platform kurallarına tam uyumlu hazırlanır.</p>
+      </details>
+      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+          Revize hakkımız var mı?
+          <span class="transition group-open:rotate-180">▾</span>
+        </summary>
+        <p class="text-slate-400 text-sm mt-3">Evet, teslim edilen çalışmalarda istediğiniz düzeltmeleri müşteri memnuniyeti sağlanana kadar uyguluyoruz.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-900 bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-brand-blue text-white font-heading font-extrabold text-lg flex items-center justify-center rounded-lg">M</div>
+        <span class="font-heading font-bold text-white">MAYYDS</span>
+      </div>
+      <p class="text-xs text-slate-500">© 2026 MAYYDS E-Commerce Visual Studio. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Before-After Slider Logic
+    const slider = document.getElementById('slider');
+    const range = document.getElementById('slider-range');
+    range.addEventListener('input', (e) => {
+      slider.style.setProperty('--pos', `${e.target.value}%`);
+    });
+
+    // Form to WhatsApp Direct Integration
+    document.getElementById('quote-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service-type').value;
+      const volume = document.getElementById('volume').value;
+      const notes = document.getElementById('notes').value;
+
+      const message = `Merhaba MAYYDS! Web sitenizden teklif almak istiyorum:%0A%0A` +
+                      `👤 *İsim:* ${name}%0A` +
+                      `📞 *Telefon:* ${phone}%0A` +
+                      `🛠️ *Hizmet:* ${service}%0A` +
+                      `📦 *Hacim:* ${volume}%0A` +
+                      `📝 *Not / Link:* ${notes}`;
+      
+      // WhatsApp numarası (kendi numaranı 905XXXXXXXXX şeklinde buraya yazabilirsin)
+      const targetNumber = "905000000000"; 
+      window.open(`https://wa.me/${targetNumber}?text=${message}`, '_blank');
+    });
+  </script>
+</body>
+</html>
+
