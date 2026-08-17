@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAYYDS — E-Commerce Visual Studio | Profesyonel Ürün Görselleri</title>
   <meta name="description" content="E-ticaret markaları için profesyonel ürün görseli düzenleme, dekupe, retouch ve infografik tasarım stüdyosu.">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <!-- Google Fonts: Manrope & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -190,37 +192,31 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Item 1 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">🖼️</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Ürün Görseli Düzenleme</h3>
         <p class="mt-2 text-slate-400 text-sm">Işık, kontrast, renk kalibrasyonu ve gölge optimizasyonu ile kusursuz görünüm.</p>
       </div>
-      <!-- Item 2 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">⬜</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Beyaz Arka Plan & Dekupe</h3>
         <p class="mt-2 text-slate-400 text-sm">Pazaryeri kurallarına %100 uyumlu, pürüzsüz kenar kesimi ve saf beyaz zemin.</p>
       </div>
-      <!-- Item 3 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">✨</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Profesyonel Retouch</h3>
         <p class="mt-2 text-slate-400 text-sm">Toz, çizik ve yansımaları temizleme; malzeme dokusunu premium seviyeye çıkarma.</p>
       </div>
-      <!-- Item 4 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">📦</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Pazaryeri Görselleri</h3>
         <p class="mt-2 text-slate-400 text-sm">Trendyol, Amazon ve Hepsiburada için tıklanma oranını katlayan ilk kapak görselleri.</p>
       </div>
-      <!-- Item 5 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">📊</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">E-Ticaret İnfografik</h3>
         <p class="mt-2 text-slate-400 text-sm">Ürün ölçüleri, teknik detaylar ve kullanım faydalarını anlatan görsel şemalar.</p>
       </div>
-      <!-- Item 6 -->
       <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
         <div class="text-3xl mb-4">🤖</div>
         <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">AI Konsept & Yaşam Alanı</h3>
@@ -274,7 +270,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Adınız Soyadınız</label>
-            <input type="text" id="name" required placeholder="Mehmet Ali Yılmaz" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
+            <input type="text" id="name" required placeholder="Ad Soyad" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
           </div>
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Telefon / WhatsApp</label>
@@ -361,42 +357,13 @@
     // Before-After Slider Logic
     const slider = document.getElementById('slider');
     const range = document.getElementById('slider-range');
-    range.addEventListener('input', (e) => {
-      slider.style.setProperty('--pos', `${e.target.value}%`);
-    });
-
-    // Form to WhatsApp Direct Integration
-    document.getElementById('quote-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const service = document.getElementById('service-type').value;
-      const volume = document.getElementById('volume').value;
-      const notes = document.getElementById('notes').value;
-
-      const message = `Merhaba MAYYDS! Web sitenizden teklif almak istiyorum:%0A%0A` +
-                      `👤 *İsim:* ${MehmetAliyılmaz}%0A` +
-                      `📞 *Telefon:* ${05531600042}%0A` +
-                      `🛠️ *Hizmet:* ${GörselTasarım}%0A` +
-                      `📦 *Hacim:* ${volume}%0A` +
-                      `📝 *Not / Link:* ${notes}`;
-      
-      // WhatsApp numarası (kendi numaranı 905XXXXXXXXX şeklinde buraya yazabilirsin)
-      const targetNumber = "905531600042"; 
-      window.open(`https://wa.me/${targetNumber}?text=${message}`, '_blank');
-    });
- <!-- ================= SCRIPTS ================= -->
-  <script>
-    // Before-After Slider Logic
-    const slider = document.getElementById('slider');
-    const range = document.getElementById('slider-range');
     if (range && slider) {
       range.addEventListener('input', (e) => {
         slider.style.setProperty('--pos', `${e.target.value}%`);
       });
     }
 
-    // Form to WhatsApp Direct Integration (Garantili Yönlendirme)
+    // Form to WhatsApp Direct Integration
     const quoteForm = document.getElementById('quote-form');
     if (quoteForm) {
       quoteForm.addEventListener('submit', function(e) {
@@ -415,13 +382,15 @@
                         `📦 *Hacim:* ${volume}\n` +
                         `📝 *Not / Link:* ${notes}`;
         
-        // WhatsApp numaranı buraya 905XXXXXXXXX formatında yaz:
-        const targetNumber = "905531600051"; // <-- Kendi numaranı buraya yaz
+        // WhatsApp hedef numarası (Kendi numaranı buraya yaz)
+        const targetNumber = "905531600042";
 
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodeURIComponent(message)}`;
         
-        // Doğrudan yönlendirme (Pop-up engeline takılmaz)
+        // Pop-up engeline takılmadan yönlendir
         window.location.href = whatsappUrl;
       });
     }
   </script>
+</body>
+</html>
