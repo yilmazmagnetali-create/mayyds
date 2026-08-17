@@ -385,7 +385,43 @@
       const targetNumber = "905531600042"; 
       window.open(`https://wa.me/${targetNumber}?text=${message}`, '_blank');
     });
-  </script>
-</body>
-</html>
+ <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Before-After Slider Logic
+    const slider = document.getElementById('slider');
+    const range = document.getElementById('slider-range');
+    if (range && slider) {
+      range.addEventListener('input', (e) => {
+        slider.style.setProperty('--pos', `${e.target.value}%`);
+      });
+    }
 
+    // Form to WhatsApp Direct Integration (Garantili Yönlendirme)
+    const quoteForm = document.getElementById('quote-form');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service-type').value;
+        const volume = document.getElementById('volume').value;
+        const notes = document.getElementById('notes').value || 'Belirtilmedi';
+
+        const message = `Merhaba MAYYDS! Web sitenizden teklif almak istiyorum:\n\n` +
+                        `👤 *İsim:* ${name}\n` +
+                        `📞 *Telefon:* ${phone}\n` +
+                        `🛠️ *Hizmet:* ${service}\n` +
+                        `📦 *Hacim:* ${volume}\n` +
+                        `📝 *Not / Link:* ${notes}`;
+        
+        // WhatsApp numaranı buraya 905XXXXXXXXX formatında yaz:
+        const targetNumber = "905531600051"; // <-- Kendi numaranı buraya yaz
+
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodeURIComponent(message)}`;
+        
+        // Doğrudan yönlendirme (Pop-up engeline takılmaz)
+        window.location.href = whatsappUrl;
+      });
+    }
+  </script>
