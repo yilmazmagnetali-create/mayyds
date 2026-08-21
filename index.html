@@ -3,312 +3,492 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAYYDS — E-Commerce Visual Studio | Profesyonel Ürün Görselleri</title>
-  <meta name="description" content="E-ticaret markaları için profesyonel ürün görseli düzenleme, dekupe, retouch ve infografik tasarım stüdyosu.">
+  <title>MAYYDS — E-Ticaret Görsel Tasarım Stüdyosu | Profesyonel Ürün Görselleri</title>
+  <meta name="description" content="E-ticaret markaları için profesyonel ürün görseli düzenleme, dekupe, retouch, Amazon listing ve infografik tasarım stüdyosu.">
   
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="7tT026wgIp27Z-Sqzfb_FxeTS8ANH46_WvvB01pZbRY" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./1.PNG">
+  <link rel="apple-touch-icon" href="./1.PNG">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Manrope & Inter -->
+  <!-- Google Fonts: Manrope & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             brand: {
-              navy: '#0B1220',
+              dark: '#050914',
+              card: 'rgba(10, 19, 38, 0.75)',
+              cardBorder: 'rgba(59, 130, 246, 0.2)',
               blue: '#2563EB',
-              lightBlue: '#3B82F6',
-              bgLight: '#F8FAFC',
-              cardDark: '#111A2E'
+              cyan: '#38BDF8',
+              glow: 'rgba(37, 99, 235, 0.35)'
             }
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
             heading: ['Manrope', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon': '0 0 40px -10px rgba(37, 99, 235, 0.5)',
+            'neon-lg': '0 0 60px -15px rgba(56, 189, 248, 0.4)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
           }
         }
       }
     }
   </script>
+
+  <style>
+    /* Cam Efekti & Özel Parıltılar */
+    .glass-panel {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(8, 14, 29, 0.85) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(96, 165, 250, 0.6);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
+      transform: translateY(-2px);
+    }
+    /* Slider Tutamacı */
+    .slider-handle {
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-blue selection:text-white">
+<body class="bg-[#040711] text-slate-100 font-sans antialiased selection:bg-brand-blue selection:text-white overflow-x-hidden">
+
+  <!-- Arka Plan Mavi Işık Süzmeleri (Neon Glows) -->
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/15 blur-[160px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-10 w-[600px] h-[600px] bg-sky-500/15 blur-[180px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed -bottom-20 left-1/3 w-[700px] h-[500px] bg-blue-700/10 blur-[200px] rounded-full pointer-events-none -z-10"></div>
 
   <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#040711]/75 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 bg-brand-blue text-white font-heading font-extrabold text-2xl flex items-center justify-center rounded-xl shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
+      
+      <!-- Marka Logo -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 bg-gradient-to-br from-blue-500 to-blue-700 text-white font-heading font-extrabold text-2xl flex items-center justify-center rounded-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-all">
           M
         </div>
         <div>
-          <span class="font-heading font-extrabold text-xl tracking-wider text-white">MAYYDS</span>
-          <span class="block text-[10px] tracking-widest uppercase text-slate-400 font-medium">Visual Studio</span>
+          <span class="font-heading font-extrabold text-xl tracking-wider text-white block">MAYYDS</span>
+          <span class="block text-[10px] tracking-[0.25em] uppercase text-sky-400 font-semibold">Visual Studio</span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <!-- Menü Linkleri -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#" class="text-sky-400 font-semibold relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-sky-400 after:rounded-full">Ana Sayfa</a>
         <a href="#services" class="hover:text-white transition">Hizmetler</a>
         <a href="#portfolio" class="hover:text-white transition">Portföy</a>
         <a href="#process" class="hover:text-white transition">Nasıl Çalışıyoruz?</a>
         <a href="#faq" class="hover:text-white transition">SSS</a>
       </nav>
 
-      <!-- CTA Button -->
-      <a href="#quote" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-blue hover:bg-brand-lightBlue text-white font-medium text-sm transition-all shadow-md shadow-brand-blue/20 hover:shadow-brand-blue/40">
-        Teklif Al
-      </a>
+      <!-- Sağ Aksiyon Butonları -->
+      <div class="flex items-center gap-3">
+        <a href="#quote" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-sky-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Teklif Al</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="relative pt-36 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/20 blur-[130px] rounded-full pointer-events-none"></div>
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Sol Taraf: Başlık ve Açıklamalar -->
+      <div class="lg:col-span-6 space-y-6 text-left">
+        
+        <!-- Rozet (Badge) -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/60 text-xs font-semibold text-sky-400 shadow-inner">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sky-400"></i>
+          <span>E-Ticaret İçin Profesyonel Görsel Çözümler</span>
+        </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-brand-lightBlue mb-8">
-        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
-        E-COMMERCE VISUAL STUDIO
+        <!-- Ana Başlık -->
+        <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-[1.12]">
+          Görsellerle <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-blue-500">Markanı</span> <br>
+          Güçlendir.
+        </h1>
+
+        <!-- Açıklama -->
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+          Ürünlerinizi en iyi şekilde yansıtmak için profesyonel görsel düzenleme ve tasarım hizmetleri sunuyoruz. E-ticaret dünyasında fark yaratın, satışlarınızı artırın.
+        </p>
+
+        <!-- CTA Butonları -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#services" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-lg shadow-blue-600/40 hover:shadow-blue-500/60">
+            <span>Hizmetlerimizi İncele</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          
+          <a href="#portfolio" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-semibold text-sm transition-all">
+            <i data-lucide="play" class="w-4 h-4 text-sky-400 fill-sky-400"></i>
+            <span>Portföyü Gör</span>
+          </a>
+        </div>
+
+        <!-- Müşteri Güven Kutusu -->
+        <div class="pt-4 flex items-center gap-4">
+          <div class="flex -space-x-2 overflow-hidden">
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-[#040711] bg-gradient-to-tr from-blue-600 to-sky-400 text-[11px] font-bold text-white flex items-center justify-center">TC</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-[#040711] bg-gradient-to-tr from-indigo-600 to-purple-400 text-[11px] font-bold text-white flex items-center justify-center">MY</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-[#040711] bg-gradient-to-tr from-cyan-600 to-blue-500 text-[11px] font-bold text-white flex items-center justify-center">EK</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-[#040711] bg-slate-800 text-[11px] font-bold text-sky-400 flex items-center justify-center border border-slate-700">+250</div>
+          </div>
+          <div>
+            <div class="flex items-center text-amber-400 text-xs gap-1">
+              ★★★★★
+            </div>
+            <p class="text-xs font-semibold text-slate-300">250+ Mutlu E-Ticaret Markası</p>
+          </div>
+        </div>
+
       </div>
 
-      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none">
-        Ürününüzün <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-blue">En İyi</span> Görüntüsü.
-      </h1>
+      <!-- Sağ Taraf: Stüdyo & Öncesi / Sonrası Vitrin Paneli -->
+      <div class="lg:col-span-6 relative">
+        
+        <!-- Ana Görsel Paneli (Stüdyo Mockup) -->
+        <div class="relative glass-panel rounded-3xl p-4 sm:p-6 shadow-2xl border border-blue-500/30 overflow-hidden group">
+          
+          <!-- Üst Mac Pencere Çubuğu -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            </div>
+            <span class="text-[11px] font-mono tracking-wider text-slate-400 uppercase">MAYYDS Studio Canvas v2.4</span>
+            <div class="w-8"></div>
+          </div>
 
-      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
-        Pazaryerleri ve e-ticaret mağazanız için ham fotoğrafları yüksek dönüşümlü, satış odaklı stüdyo ve katalog görsellerine dönüştürüyoruz.
-      </p>
+          <!-- İnteraktif Öncesi / Sonrası Karşılaştırma Alanı -->
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden select-none bg-slate-950 border border-slate-800" id="before-after-box">
+            
+            <!-- Sonrası (İşlenmiş Profesyonel Görsel) -->
+            <img src="./1.PNG" alt="Sonrası - Profesyonel Retouch" class="absolute inset-0 w-full h-full object-contain p-4 bg-gradient-to-b from-slate-900 to-black pointer-events-none">
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500/90 text-[10px] font-bold tracking-wider text-black uppercase shadow-md">Sonrası</span>
 
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#quote" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-blue hover:bg-brand-lightBlue text-white font-semibold text-base transition-all shadow-lg shadow-brand-blue/30">
-          Hemen Teklif Alın
-        </a>
-        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-base transition-all">
-          Portföyü İncele ↓
-        </a>
+            <!-- Öncesi (Ham Fotoğraf) - Maskelenmiş Katman -->
+            <div id="before-layer" class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-sky-400 bg-slate-900">
+              <img src="./2.jpeg" alt="Öncesi - Ham Fotoğraf" class="absolute inset-0 w-full h-full object-contain p-4 pointer-events-none" style="min-width: 100%; min-height: 100%;">
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-slate-800/90 text-[10px] font-bold tracking-wider text-slate-300 uppercase shadow-md">Öncesi</span>
+            </div>
+
+            <!-- Kaydırma Tutamacı (Slider Handle) -->
+            <div id="slider-drag" class="absolute top-0 bottom-0 w-8 -ml-4 flex items-center justify-center cursor-ew-resize z-20" style="left: 50%;">
+              <div class="w-8 h-8 rounded-full bg-sky-400 text-slate-950 flex items-center justify-center font-bold text-xs shadow-lg slider-handle">
+                ⇄
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sol Alt Güvence Rozeti -->
+          <div class="absolute bottom-10 left-8 px-3.5 py-2 rounded-xl bg-slate-950/90 border border-emerald-500/40 shadow-xl flex items-center gap-2.5 backdrop-blur-md">
+            <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">✓</div>
+            <div>
+              <div class="text-[11px] font-bold text-white">%100 Memnuniyet</div>
+              <div class="text-[9px] text-slate-400">2 Ücretsiz Revize Hakkı</div>
+            </div>
+          </div>
+
+          <!-- Sağ Üst Özellikler Kutusu -->
+          <div class="hidden sm:block absolute top-14 right-6 bg-slate-900/90 border border-blue-500/30 rounded-xl p-3 shadow-2xl backdrop-blur-md space-y-1.5">
+            <div class="flex items-center gap-2 text-[11px] font-semibold text-slate-200">
+              <span class="w-3.5 h-3.5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-[9px]">✓</span>
+              <span>Beyaz Arka Plan (255 RGB)</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] font-semibold text-slate-200">
+              <span class="w-3.5 h-3.5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-[9px]">✓</span>
+              <span>Renk & Işık Kalibrasyonu</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] font-semibold text-slate-200">
+              <span class="w-3.5 h-3.5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-[9px]">✓</span>
+              <span>Kusursuz Retouch & Dekupe</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] font-semibold text-slate-200">
+              <span class="w-3.5 h-3.5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-[9px]">✓</span>
+              <span>Gölge & Derinlik Ekleme</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- Trust Badges -->
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
-          <span class="text-2xl">⚡</span>
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase">Hızlı Teslimat</h4>
-            <p class="text-[11px] text-slate-400">Proje Bazlı Planlama</p>
-          </div>
+    </div>
+
+    <!-- ================= HİZMET KARTLARI (GRID) ================= -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+      
+      <!-- Kart 1 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-3">
+          <i data-lucide="camera" class="w-5 h-5"></i>
         </div>
-        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
-          <span class="text-2xl">💎</span>
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase">Yüksek Kalite</h4>
-            <p class="text-[11px] text-slate-400">Piksel Düzeyinde İşlem</p>
-          </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">Ürün Fotoğrafı Düzenleme</h4>
+          <p class="text-[10px] text-slate-400 mt-1">Profesyonel Retouch</p>
         </div>
-        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
-          <span class="text-2xl">🎯</span>
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase">Satış Odaklı</h4>
-            <p class="text-[11px] text-slate-400">Pazaryeri Uyumlu</p>
-          </div>
+      </a>
+
+      <!-- Kart 2 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-3">
+          <i data-lucide="image" class="w-5 h-5"></i>
         </div>
-        <div class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl flex items-center gap-3">
-          <span class="text-2xl">🛡️</span>
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase">Revize Güvencesi</h4>
-            <p class="text-[11px] text-slate-400">2 Adet Ücretsiz Revize</p>
-          </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">Beyaz Arka Plan</h4>
+          <p class="text-[10px] text-slate-400 mt-1">E-Ticaret Uyumlu</p>
+        </div>
+      </a>
+
+      <!-- Kart 3 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between border-blue-500/40">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/30 border border-sky-400/40 flex items-center justify-center text-amber-400 mb-3 font-extrabold text-sm">
+          a
+        </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">Amazon Listing</h4>
+          <p class="text-[10px] text-slate-400 mt-1">A+ İçerik & Kapak</p>
+        </div>
+      </a>
+
+      <!-- Kart 4 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-3">
+          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">İnfografik Tasarım</h4>
+          <p class="text-[10px] text-slate-400 mt-1">Ürün Detay Şemaları</p>
+        </div>
+      </a>
+
+      <!-- Kart 5 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-3">
+          <i data-lucide="pen-tool" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">Sosyal Medya & Reklam</h4>
+          <p class="text-[10px] text-slate-400 mt-1">Banner & Story Setleri</p>
+        </div>
+      </a>
+
+      <!-- Kart 6 -->
+      <a href="#quote" class="glass-panel p-4 rounded-2xl glass-card-hover transition-all text-left flex flex-col justify-between">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-3">
+          <i data-lucide="box" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white">Ürün Mockup & AI</h4>
+          <p class="text-[10px] text-slate-400 mt-1">Premium Sahneleme</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ================= İSTATİSTİKLER ================= -->
+    <div class="mt-12 glass-panel rounded-2xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 border-slate-800/80">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-blue-600/20 text-sky-400 flex items-center justify-center">
+          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-xl sm:text-2xl text-white">1.250+</div>
+          <div class="text-xs text-slate-400">Tamamlanan Görsel Projesi</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-blue-600/20 text-sky-400 flex items-center justify-center">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-xl sm:text-2xl text-white">250+</div>
+          <div class="text-xs text-slate-400">Mutlu Müşteri Portföyü</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-blue-600/20 text-sky-400 flex items-center justify-center">
+          <i data-lucide="star" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-xl sm:text-2xl text-white">3 Yıl+</div>
+          <div class="text-xs text-slate-400">Sektörel Deneyim</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-blue-600/20 text-sky-400 flex items-center justify-center">
+          <i data-lucide="headphones" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-xl sm:text-2xl text-white">7/24</div>
+          <div class="text-xs text-slate-400">Kesintisiz Destek & İletişim</div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- ================= PORTFOLIO / GALLERY ================= -->
-  <section id="portfolio" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+  <!-- ================= PORTFOLIO SECTION ================= -->
+  <section id="portfolio" class="py-24 bg-slate-950/60 border-t border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white">Seçilmiş Portföy Çalışmalarımız</h2>
-        <p class="mt-3 text-slate-400 text-base max-w-2xl mx-auto">MAYYDS Studio tarafından hazırlanan e-ticaret ve pazaryeri odaklı görsel vitrini.</p>
+        <p class="mt-3 text-slate-400 text-base max-w-2xl mx-auto">MAYYDS Visual Studio tarafından hazırlanan e-ticaret vitrini.</p>
       </div>
 
-      <!-- 6 Image Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Item 1 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./1.PNG" alt="MAYYDS Portföy 1" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./1.PNG" alt="MAYYDS 1" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">Katalog & Retouch</span>
-            <h4 class="text-white font-heading font-bold text-lg">Ürün Görsel Tasarımı</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">Katalog & Retouch</span>
+            <h4 class="text-white font-bold text-base">Ürün Görsel Tasarımı</h4>
           </div>
         </div>
 
-        <!-- Item 2 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./2.jpeg" alt="MAYYDS Portföy 2" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./2.jpeg" alt="MAYYDS 2" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">Stüdyo & Dekupe</span>
-            <h4 class="text-white font-heading font-bold text-lg">Pazaryeri Kapak Görseli</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">Stüdyo & Dekupe</span>
+            <h4 class="text-white font-bold text-base">Pazaryeri Kapak Görseli</h4>
           </div>
         </div>
 
-        <!-- Item 3 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./a.jpeg" alt="MAYYDS Portföy 3" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./a.jpeg" alt="MAYYDS 3" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">Premium Retouch</span>
-            <h4 class="text-white font-heading font-bold text-lg">Yüzey & Renk Kalibrasyonu</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">Premium Retouch</span>
+            <h4 class="text-white font-bold text-base">Yüzey & Renk Kalibrasyonu</h4>
           </div>
         </div>
 
-        <!-- Item 4 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./s.jpeg" alt="MAYYDS Portföy 4" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./s.jpeg" alt="MAYYDS 4" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">İnfografik Düzenleme</span>
-            <h4 class="text-white font-heading font-bold text-lg">Detay & Özellik Vurgusu</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">İnfografik Düzenleme</span>
+            <h4 class="text-white font-bold text-base">Detay & Özellik Vurgusu</h4>
           </div>
         </div>
 
-        <!-- Item 5 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./5.jpeg" alt="MAYYDS Portföy 5" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./5.jpeg" alt="MAYYDS 5" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">E-Ticaret Vitrini</span>
-            <h4 class="text-white font-heading font-bold text-lg">Işık & Gölge Optimizasyonu</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">E-Ticaret Vitrini</span>
+            <h4 class="text-white font-bold text-base">Işık & Gölge Optimizasyonu</h4>
           </div>
         </div>
 
-        <!-- Item 6 -->
-        <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl aspect-square flex items-center justify-center p-4">
-          <img src="./d.jpeg" alt="MAYYDS Portföy 6" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+        <div class="group relative rounded-2xl overflow-hidden glass-panel p-3 aspect-square flex items-center justify-center">
+          <img src="./d.jpeg" alt="MAYYDS 6" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-            <span class="text-xs font-bold text-brand-lightBlue uppercase tracking-wider">Özel Konsept</span>
-            <h4 class="text-white font-heading font-bold text-lg">Satış Odaklı Sunum</h4>
+            <span class="text-xs font-bold text-sky-400 uppercase">Özel Sahne & AI</span>
+            <h4 class="text-white font-bold text-base">Satış Odaklı Sunum</h4>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SERVICES ================= -->
-  <section id="services" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white">E-Ticaret İçin Uçtan Uca Görsel Hizmetler</h2>
-      <p class="mt-4 text-slate-400">Ürününüzün tüm platformlarda profesyonel ve güven verici durmasını sağlıyoruz.</p>
+  <!-- ================= PROCESS SECTION ================= -->
+  <section id="process" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Nasıl Çalışıyoruz?</h2>
+      <p class="mt-3 text-slate-400 text-sm">4 adımda ürünlerinizi pazaryerlerinde en çok satanlar arasına taşıyın.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">🖼️</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Ürün Görseli Düzenleme</h3>
-        <p class="mt-2 text-slate-400 text-sm">Işık, kontrast, renk kalibrasyonu ve gölge optimizasyonu ile kusursuz görünüm.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-6 rounded-2xl">
+        <span class="font-heading font-extrabold text-4xl text-blue-500/30 block mb-2">01</span>
+        <h4 class="font-bold text-white text-base">Fotoğrafları İletin</h4>
+        <p class="text-slate-400 text-xs mt-2">Telefon veya kamerayla çekilmiş ham ürün görsellerini iletin.</p>
       </div>
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">⬜</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Beyaz Arka Plan & Dekupe</h3>
-        <p class="mt-2 text-slate-400 text-sm">Pazaryeri kurallarına %100 uyumlu, pürüzsüz kenar kesimi ve saf beyaz zemin.</p>
+
+      <div class="glass-panel p-6 rounded-2xl">
+        <span class="font-heading font-extrabold text-4xl text-blue-500/30 block mb-2">02</span>
+        <h4 class="font-bold text-white text-base">Strateji & Planlama</h4>
+        <p class="text-slate-400 text-xs mt-2">Trendyol, Amazon veya sitenizin gereksinimlerine göre tarz belirleyelim.</p>
       </div>
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">✨</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Profesyonel Retouch</h3>
-        <p class="mt-2 text-slate-400 text-sm">Toz, çizik ve yansımaları temizleme; malzeme dokusunu premium seviyeye çıkarma.</p>
+
+      <div class="glass-panel p-6 rounded-2xl">
+        <span class="font-heading font-extrabold text-4xl text-blue-500/30 block mb-2">03</span>
+        <h4 class="font-bold text-white text-base">Profesyonel Düzenleme</h4>
+        <p class="text-slate-400 text-xs mt-2">Dekupe, retouch, infografik ve gölgelendirmeleri kusursuzca işleyelim.</p>
       </div>
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">📦</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">Pazaryeri Görselleri</h3>
-        <p class="mt-2 text-slate-400 text-sm">Trendyol, Amazon ve Hepsiburada için tıklanma oranını katlayan ilk kapak görselleri.</p>
-      </div>
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">📊</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">E-Ticaret İnfografik</h3>
-        <p class="mt-2 text-slate-400 text-sm">Ürün ölçüleri, teknik detaylar ve kullanım faydalarını anlatan görsel şemalar.</p>
-      </div>
-      <div class="bg-slate-900/70 border border-slate-800 p-8 rounded-2xl hover:border-brand-blue/50 transition group">
-        <div class="text-3xl mb-4">🤖</div>
-        <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-lightBlue transition">AI Konsept & Yaşam Alanı</h3>
-        <p class="mt-2 text-slate-400 text-sm">Stüdyo masrafı olmadan yapay zeka ile oluşturulan gerçekçi lifestyle sahneleri.</p>
+
+      <div class="glass-panel p-6 rounded-2xl">
+        <span class="font-heading font-extrabold text-4xl text-blue-500/30 block mb-2">04</span>
+        <h4 class="font-bold text-white text-base">Teslimat & Revize</h4>
+        <p class="text-slate-400 text-xs mt-2">2 ücretsiz revize güvencesiyle yüksek çözünürlüklü dosyaları teslim alın.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
-  <section id="process" class="py-20 bg-slate-900/30 border-t border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Nasıl Çalışıyoruz?</h2>
-        <p class="mt-3 text-slate-400">4 basit adımda ürünlerinizi satışa hazır hale getirin.</p>
+  <!-- ================= FORM SECTION ================= -->
+  <section id="quote" class="py-20 max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl shadow-2xl border-blue-500/30 relative">
+      <div class="text-center mb-8">
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white">Projeniz İçin Hızlı Teklif Alın</h2>
+        <p class="text-slate-400 mt-2 text-xs sm:text-sm">Formu doldurun, saniyeler içinde WhatsApp üzerinden görüşelim.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">01</span>
-          <h4 class="font-bold text-white text-lg">Görselleri İletin</h4>
-          <p class="text-slate-400 text-sm mt-2">Telefon veya makineyle çekilmiş ham fotoğrafları Drive ile paylaşın.</p>
-        </div>
-        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">02</span>
-          <h4 class="font-bold text-white text-lg">Analiz & Plan</h4>
-          <p class="text-slate-400 text-sm mt-2">Satış yapılacak platforma ve hedef kitleye göre görsel tarzını belirleyelim.</p>
-        </div>
-        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">03</span>
-          <h4 class="font-bold text-white text-lg">Stüdyo İşlemi</h4>
-          <p class="text-slate-400 text-sm mt-2">Dekupe, retouch ve infografik çalışmalarını titizlikle tamamlayalım.</p>
-        </div>
-        <div class="relative p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-          <span class="font-heading font-extrabold text-4xl text-brand-blue/30 block mb-3">04</span>
-          <h4 class="font-bold text-white text-lg">Teslimat & Satış</h4>
-          <p class="text-slate-400 text-sm mt-2">Onayınız sonrası yüksek çözünürlüklü satışa hazır dosyaları teslim alın.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= QUOTE / CONTACT FORM ================= -->
-  <section id="quote" class="py-24 max-w-4xl mx-auto px-4 sm:px-6">
-    <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
-      <div class="text-center mb-10">
-        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Projeniz İçin Hızlı Teklif Alın</h2>
-        <p class="text-slate-400 mt-2 text-sm">Formu doldurun, en kısa sürede detaylı teklifinizi iletelim.</p>
-      </div>
-
-      <form id="quote-form" class="space-y-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <form id="quote-form" class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Adınız Soyadınız</label>
-            <input type="text" id="name" required placeholder="Ad Soyad" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
+            <input type="text" id="name" required placeholder="Ad Soyad" class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm">
           </div>
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Telefon / WhatsApp</label>
-            <input type="tel" id="phone" required placeholder="05XX XXX XX XX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue">
+            <input type="tel" id="phone" required placeholder="05XX XXX XX XX" class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm">
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Hizmet Türü</label>
-            <select id="service-type" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue">
+            <select id="service-type" class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm">
+              <option>Ürün Fotoğrafı Düzenleme & Retouch</option>
               <option>Beyaz Arka Plan & Dekupe</option>
-              <option>Pazaryeri Ürün Görselleri</option>
-              <option>Profesyonel Retouch</option>
+              <option>Amazon / Trendyol Listing Görselleri</option>
               <option>E-Ticaret İnfografik Tasarım</option>
-              <option>AI Destekli Konsept Çekim</option>
+              <option>Ürün Mockup & AI Sahneleme</option>
               <option>Toplu Katalog İşleme</option>
             </select>
           </div>
           <div>
             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Görsel / Ürün Sayısı</label>
-            <select id="volume" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue">
+            <select id="volume" class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm">
               <option>1 - 10 Görsel (Hızlı Proje)</option>
-              <option>11 - 50 Görsel (Lansman / Koleksiyon)</option>
+              <option>11 - 50 Görsel (Koleksiyon / Lansman)</option>
               <option>50 - 200 Görsel (Katalog)</option>
               <option>200+ Görsel / Aylık Düzenli İş</option>
             </select>
@@ -316,63 +496,109 @@
         </div>
 
         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Görsel / Drive Linki veya Proje Notu</label>
-          <textarea id="notes" rows="3" placeholder="Drive / WeTransfer linki veya ürününüz hakkında kısa bilgi..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-blue"></textarea>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Görsel / Drive Linki veya Not</label>
+          <textarea id="notes" rows="3" placeholder="Drive / WeTransfer linki veya ürününüz hakkında kısa detay..." class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm"></textarea>
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-brand-lightBlue text-white font-bold text-base transition-all shadow-lg shadow-brand-blue/30 flex items-center justify-center gap-2">
-          <span>🚀 WhatsApp İle Hızlı Teklif Al</span>
+        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>WhatsApp İle Hızlı Teklif Al</span>
         </button>
       </form>
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
-  <section id="faq" class="py-20 max-w-3xl mx-auto px-4 sm:px-6">
-    <h2 class="font-heading font-extrabold text-3xl text-white text-center mb-10">Sıkça Sorulan Sorular</h2>
-    <div class="space-y-4">
-      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-16 max-w-3xl mx-auto px-4 sm:px-6">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white text-center mb-8">Sıkça Sorulan Sorular</h2>
+    <div class="space-y-3">
+      <details class="group glass-panel p-4 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer text-sm">
           Telefonla çekilen fotoğrafları kullanabilir miyiz?
           <span class="transition group-open:rotate-180">▾</span>
         </summary>
-        <p class="text-slate-400 text-sm mt-3">Evet! Yeterli ışıkta çekilmiş net telefon fotoğraflarını profesyonel retouch ve stüdyo dokunuşlarıyla pazaryerlerine uygun hale getiriyoruz.</p>
+        <p class="text-slate-400 text-xs sm:text-sm mt-3">Evet! Yeterli ışıkta çekilmiş telefon fotoğraflarını dekupe, retouch ve ışık kalibrasyonu ile stüdyo kalitesine yükseltiyoruz.</p>
       </details>
-      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+
+      <details class="group glass-panel p-4 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer text-sm">
           Trendyol ve Amazon gereksinimlerine uygun mu?
           <span class="transition group-open:rotate-180">▾</span>
         </summary>
-        <p class="text-slate-400 text-sm mt-3">Kesinlikle. Tüm görseller saf beyaz zemin (%100 RGB 255), doğru piksel boyutları ve dosya sıkıştırma oranlarıyla platform kurallarına tam uyumlu hazırlanır.</p>
+        <p class="text-slate-400 text-xs sm:text-sm mt-3">Kesinlikle. Görseller %100 saf beyaz zemin, piksel boyutlandırma ve format standartlarına tam uyumlu teslim edilir.</p>
       </details>
-      <details class="group bg-slate-900/50 border border-slate-800 p-5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+
+      <details class="group glass-panel p-4 rounded-xl [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer text-sm">
           Revize hakkımız var mı?
           <span class="transition group-open:rotate-180">▾</span>
         </summary>
-        <p class="text-slate-400 text-sm mt-3">Evet! Teslim edilen her görsel için <strong class="text-white">2 adet ücretsiz revize hakkı</strong> sunuyoruz. Renk tonu, ışık, dekupe veya detaylandırma gibi tüm taleplerinizi tam memnuniyet sağlanana kadar hızla uyguluyoruz.</p>
+        <p class="text-slate-400 text-xs sm:text-sm mt-3">Evet! Teslim edilen her görsel için <strong class="text-white">2 adet ücretsiz revize hakkı</strong> sunuyoruz.</p>
       </details>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-slate-900 bg-black py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer class="border-t border-slate-900 bg-[#02050b] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-brand-blue text-white font-heading font-extrabold text-lg flex items-center justify-center rounded-lg">M</div>
-        <span class="font-heading font-bold text-white">MAYYDS</span>
+        <div class="w-8 h-8 bg-blue-600 text-white font-heading font-extrabold text-lg flex items-center justify-center rounded-lg">M</div>
+        <span class="font-heading font-bold text-white tracking-wide">MAYYDS</span>
       </div>
-      <p class="text-xs text-slate-500">© 2026 MAYYDS E-Commerce Visual Studio. Tüm hakları saklıdır.</p>
+      <p class="text-xs text-slate-500 font-mono">MAYYDS VISUAL STUDIO • GÖRSELLERİN GÜCÜYLE, MARKANI YÜKSELT.</p>
     </div>
   </footer>
 
   <!-- ================= SCRIPTS ================= -->
   <script>
+    // İkonları Başlat
+    lucide.createIcons();
+
+    // İnteraktif Öncesi / Sonrası Kaydırıcı (Before-After Slider)
+    const box = document.getElementById('before-after-box');
+    const beforeLayer = document.getElementById('before-layer');
+    const sliderDrag = document.getElementById('slider-drag');
+
+    if (box && beforeLayer && sliderDrag) {
+      let isDragging = false;
+
+      const updateSlider = (x) => {
+        const rect = box.getBoundingClientRect();
+        let posX = x - rect.left;
+        if (posX < 0) posX = 0;
+        if (posX > rect.width) posX = rect.width;
+        const percentage = (posX / rect.width) * 100;
+        beforeLayer.style.width = percentage + '%';
+        sliderDrag.style.left = percentage + '%';
+      };
+
+      box.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateSlider(e.clientX);
+      });
+      window.addEventListener('mouseup', () => isDragging = false);
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updateSlider(e.clientX);
+      });
+
+      // Mobil Dokunmatik Desteği
+      box.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        updateSlider(e.touches[0].clientX);
+      });
+      window.addEventListener('touchend', () => isDragging = false);
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        updateSlider(e.touches[0].clientX);
+      });
+    }
+
+    // WhatsApp Form Yönlendirme
     const quoteForm = document.getElementById('quote-form');
     if (quoteForm) {
       quoteForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
         const name = document.getElementById('name').value;
         const phone = document.getElementById('phone').value;
         const service = document.getElementById('service-type').value;
@@ -388,7 +614,6 @@
         
         const targetNumber = "905531600042";
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodeURIComponent(message)}`;
-        
         window.location.href = whatsappUrl;
       });
     }
