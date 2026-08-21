@@ -35,6 +35,49 @@
       transform: scale(1.25);
       box-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
+
+    /* Saf CSS MAYYDS Logosu */
+    .m-glass-box {
+      background: radial-gradient(circle at 35% 25%, #60a5fa 0%, #1d4ed8 50%, #0f172a 100%);
+      border: 1px solid rgba(147, 197, 253, 0.6);
+      box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(37, 99, 235, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .m-glass-box::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      right: 4px;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+      border-radius: 10px 10px 40% 40%;
+      pointer-events: none;
+    }
+    .m-letter-3d {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Montserrat", sans-serif;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8));
+    }
+    .vertical-laser {
+      width: 2px;
+      height: 28px;
+      background: #38bdf8;
+      box-shadow: 0 0 8px 1px #0284c7, 0 0 16px 2px #38bdf8;
+      border-radius: 999px;
+    }
+    .vs-line {
+      height: 1.5px;
+      background: linear-gradient(90deg, rgba(2,132,199,0) 0%, #38bdf8 50%, rgba(2,132,199,0) 100%);
+      box-shadow: 0 0 6px #0284c7;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 md:p-8 relative">
@@ -43,13 +86,36 @@
   <div class="absolute top-20 left-10 w-96 h-96 bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
   <div class="absolute top-1/3 right-10 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
 
-  <!-- Üst Menü (Yeni MAYYDS Logosu İle) -->
+  <!-- Üst Menü (Saf CSS MAYYDS Logolu) -->
   <header class="max-w-6xl w-full mx-auto flex justify-between items-center py-4 px-2 border-b border-slate-800/60">
-    <a href="#" class="flex items-center">
-      <img src="logoo.png" onerror="this.onerror=null; this.src='logo.png';" alt="MAYYDS Visual Studio" class="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+    <a href="#" class="flex items-center gap-3.5 group select-none py-1">
+      <div class="m-glass-box w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0">
+        <span class="m-letter-3d text-2xl sm:text-[26px] leading-none transform translate-y-[-1px]">M</span>
+      </div>
+
+      <div class="vertical-laser shrink-0 hidden sm:block"></div>
+
+      <div class="flex flex-col justify-center">
+        <div class="flex items-start leading-none">
+          <span class="text-xl sm:text-2xl font-black text-white tracking-wide" style="font-family: 'Arial Black', -apple-system, sans-serif;">
+            MAYYDS
+          </span>
+          <span class="text-[8px] font-bold text-slate-300 ml-1 mt-0.5 opacity-90 border border-slate-400/60 rounded-full w-3.5 h-3.5 flex items-center justify-center leading-none">
+            ®
+          </span>
+        </div>
+
+        <div class="flex items-center gap-1.5 mt-1 w-full">
+          <div class="vs-line flex-1"></div>
+          <span class="text-[7.5px] sm:text-[8.5px] font-extrabold text-slate-200 tracking-[0.25em] uppercase whitespace-nowrap leading-none">
+            VISUAL STUDIO
+          </span>
+          <div class="vs-line flex-1"></div>
+        </div>
+      </div>
     </a>
     
-    <nav class="flex items-center gap-8 text-sm font-medium">
+    <nav class="flex items-center gap-6 sm:gap-8 text-sm font-medium">
       <a href="#" class="text-cyan-400 font-semibold relative flex items-center gap-1.5">
         Ana Sayfa <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block"></span>
       </a>
