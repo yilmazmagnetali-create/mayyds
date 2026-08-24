@@ -164,7 +164,7 @@
       </div>
     </div>
 
-    <!-- Sağ Taraf: saat.jpg Hero Vitrini (Tam Orantılı & Şık Cam Etiketli) -->
+    <!-- Sağ Taraf: saat.jpg Hero Vitrini -->
     <div class="lg:col-span-6 relative">
       <div class="relative rounded-3xl p-3 sm:p-4 glass-card neon-glow border border-blue-500/30 overflow-hidden">
         
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Saat Görseli -->
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-slate-950 aspect-[4/3] sm:aspect-[16/11]">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-slate-950 h-80 sm:h-96 w-full">
           <img src="saat.jpg" onerror="this.src='Gemini_Generated_Image_jpwjq0jpwjq0jpwj.jpg';" fetchpriority="high" decoding="async" alt="MAYYDS Lüks Kol Saati Retouch Vitrini" class="w-full h-full object-cover">
           
           <!-- Alt Cam Bilgi Çubuğu -->
@@ -220,7 +220,7 @@
     </div>
   </section>
 
-  <!-- Showcase / Temiz ve Sorunsuz Öncesi-Sonrası Düzenleme Ekranı -->
+  <!-- Showcase / Öncesi-Sonrası Düzenleme Ekranı -->
   <section id="showcase" class="max-w-6xl w-full mx-auto my-12">
     <div class="relative w-full rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 glass-card border border-blue-500/30 overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-8">
       
@@ -243,10 +243,11 @@
           </div>
 
           <div class="grid grid-cols-2 gap-3 flex-1 relative items-center">
-            <!-- Öncesi Kutusu -->
-            <div class="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-950 w-full h-44 sm:h-56 md:h-64 lg:h-72 flex items-center justify-center">
-              <span class="absolute top-2 left-2 bg-black/80 backdrop-blur-md text-[10px] sm:text-xs px-2.5 py-1 rounded-md text-slate-200 font-medium z-10">Öncesi</span>
-              <img id="beforeImg" src="parfum-before.jpg" onerror="this.src='Gemini_Generated_Image_lmclflpmclflpmcl.jpg'; this.style.filter='brightness(0.7) contrast(1.1)';" alt="Öncesi" class="w-full h-full object-contain p-2 filter brightness-75">
+            
+            <!-- Öncesi Kutusu (Otomatik Ham/Işıksız Efektli) -->
+            <div class="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-900/60 w-full h-44 sm:h-56 md:h-64 lg:h-72 flex items-center justify-center p-3">
+              <span class="absolute top-2 left-2 bg-black/80 backdrop-blur-md text-[10px] sm:text-xs px-2.5 py-1 rounded-md text-slate-200 font-medium z-10">Öncesi (Ham)</span>
+              <img id="beforeImg" src="parfum-after.jpg" onerror="this.src='Gemini_Generated_Image_mkv2opmkv2opmkv2.jpg';" alt="Öncesi" class="w-full h-full object-contain filter brightness-50 contrast-125 sepia-[0.3]">
             </div>
 
             <!-- Geçiş Oku -->
@@ -254,11 +255,12 @@
               <i class="fa-solid fa-arrow-right"></i>
             </div>
 
-            <!-- Sonrası Kutusu -->
-            <div class="relative rounded-xl overflow-hidden border border-blue-500/40 bg-white w-full h-44 sm:h-56 md:h-64 lg:h-72 flex items-center justify-center">
+            <!-- Sonrası Kutusu (Saf Beyaz Retouch) -->
+            <div class="relative rounded-xl overflow-hidden border border-blue-500/40 bg-white w-full h-44 sm:h-56 md:h-64 lg:h-72 flex items-center justify-center p-3">
               <span class="absolute top-2 left-2 bg-blue-600 text-[10px] sm:text-xs px-2.5 py-1 rounded-md text-white font-bold z-10 shadow-md">Sonrası</span>
-              <img id="afterImg" src="parfum-after.jpg" onerror="this.src='Gemini_Generated_Image_mkv2opmkv2opmkv2.jpg';" alt="Sonrası" class="w-full h-full object-contain p-2">
+              <img id="afterImg" src="parfum-after.jpg" onerror="this.src='Gemini_Generated_Image_mkv2opmkv2opmkv2.jpg';" alt="Sonrası" class="w-full h-full object-contain">
             </div>
+
           </div>
         </div>
       </div>
@@ -295,7 +297,6 @@
             <button onclick="changeMockup('Gemini_Generated_Image_oungxkoungxkoung.jpg', this)" class="color-dot active w-6 h-3.5 rounded-full bg-cyan-400"></button>
             <button onclick="changeMockup('saat.jpg', this)" class="color-dot w-6 h-3.5 rounded-full bg-blue-600"></button>
             <button onclick="changeMockup('parfum-after.jpg', this)" class="color-dot w-6 h-3.5 rounded-full bg-indigo-700"></button>
-            <button onclick="changeMockup('parfum-before.jpg', this)" class="color-dot w-6 h-3.5 rounded-full bg-slate-600"></button>
           </div>
         </div>
 
