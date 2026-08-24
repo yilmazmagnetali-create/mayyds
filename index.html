@@ -164,22 +164,32 @@
       </div>
     </div>
 
-    <!-- Sağ Taraf: saat.jpg Hero Vitrini -->
+    <!-- Sağ Taraf: saat.jpg Hero Vitrini (Tam Orantılı & Şık Cam Etiketli) -->
     <div class="lg:col-span-6 relative">
-      <div class="relative rounded-3xl p-4 sm:p-6 glass-card neon-glow border border-blue-500/30 overflow-hidden">
-        <div class="absolute top-4 right-4 z-20 glass-card px-3.5 py-1.5 rounded-xl flex items-center gap-2 border border-blue-500/40 badge-glow">
+      <div class="relative rounded-3xl p-3 sm:p-4 glass-card neon-glow border border-blue-500/30 overflow-hidden">
+        
+        <!-- %100 Rozeti -->
+        <div class="absolute top-6 right-6 z-20 glass-card px-3.5 py-1.5 rounded-xl flex items-center gap-2 border border-blue-500/40 badge-glow">
           <span class="text-[10px] font-bold text-white">%100 Profesyonel Düzenleme</span>
           <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-950">
-          <img src="saat.jpg" onerror="this.src='Gemini_Generated_Image_jpwjq0jpwjq0jpwj.jpg';" fetchpriority="high" decoding="async" alt="MAYYDS Lüks Kol Saati Retouch Vitrini" class="w-full h-80 sm:h-96 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-          <div class="absolute bottom-4 left-5">
-            <span class="text-[10px] tracking-widest text-cyan-400 font-bold uppercase">MAYYDS STUDIO</span>
-            <h3 class="text-base sm:text-lg font-bold text-white">Lüks Ürün Retouch & Sahneleme</h3>
+        <!-- Saat Görseli -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-slate-950 aspect-[4/3] sm:aspect-[16/11]">
+          <img src="saat.jpg" onerror="this.src='Gemini_Generated_Image_jpwjq0jpwjq0jpwj.jpg';" fetchpriority="high" decoding="async" alt="MAYYDS Lüks Kol Saati Retouch Vitrini" class="w-full h-full object-cover">
+          
+          <!-- Alt Cam Bilgi Çubuğu -->
+          <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10 glass-card p-3 rounded-xl border border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[9px] tracking-widest text-cyan-400 font-bold uppercase block">MAYYDS STUDIO</span>
+              <h3 class="text-xs sm:text-sm font-bold text-white leading-tight">Lüks Ürün Retouch & Sahneleme</h3>
+            </div>
+            <div class="w-8 h-8 rounded-lg bg-blue-600/30 border border-blue-500/30 flex items-center justify-center text-cyan-400 text-xs">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -469,7 +479,7 @@
     </div>
   </footer>
 
-  <!-- Mockup Değiştirme ve SSS Scripti -->
+  <!-- Scriptler -->
   <script>
     function changeMockup(imageSrc, btnElement) {
       const display = document.getElementById('mockupDisplay');
